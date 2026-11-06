@@ -265,7 +265,7 @@ export default function Hero({ isDark }) {
     <section
       id="home"
       ref={ref}
-      className={`relative min-h-screen px-4 sm:px-8 lg:px-16 py-8 sm:py-12 flex items-center justify-center overflow-hidden ${
+      className={`relative min-h-screen px-4 sm:px-8 lg:px-16 pt-24 pb-12 sm:pt-28 sm:pb-16 lg:py-16 flex items-center justify-center overflow-hidden ${
         isDark ? "bg-black text-white" : "bg-white text-black"
       } flex-col`}
     >
@@ -280,11 +280,11 @@ export default function Hero({ isDark }) {
         >
           {/* Profile Card */}
           <motion.div
-            className="flex-1 flex justify-center lg:justify-end lg:pr-8"
+            className="flex-1 flex justify-center lg:justify-end lg:pr-8 w-full mt-2 sm:mt-4 lg:mt-0"
             variants={cardVariants}
           >
             <div
-              className={`relative w-72 sm:w-80 p-8 rounded-3xl shadow-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-103 min-h-[500px] flex flex-col ${
+              className={`relative w-72 sm:w-80 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-103 min-h-[480px] sm:min-h-[500px] flex flex-col ${
                 isDark
                   ? "bg-black/90 border-red-500/30 shadow-red-500/20"
                   : "bg-white/90 border-red-200/50 shadow-red-500/10"
