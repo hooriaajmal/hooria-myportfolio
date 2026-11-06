@@ -32,7 +32,7 @@ const cardVariant = (delay = 0) => ({
 
 export default function Experience({ isDark }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, amount: 0.3 });
+  const inView = useInView(ref, { once: false, amount: 0.1 });
 
   return (
     <section
@@ -47,7 +47,7 @@ export default function Experience({ isDark }) {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={headingVariants}
-        className="text-center mt-12 mb-12"
+        className="text-center mt-10 mb-10 sm:mt-12 sm:mb-12"
       >
         <div className="inline-block relative">
           <h2 className="text-3xl sm:text-4xl font-bold inline-block">
@@ -61,7 +61,7 @@ export default function Experience({ isDark }) {
       </motion.div>
 
       {/* Two-column layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto w-full">
         {/* Left Column - Education */}
         <div className="space-y-6">
           {/* Education Card */}
@@ -69,64 +69,65 @@ export default function Experience({ isDark }) {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={cardVariant(0.2)}
-            className={`p-6 rounded-2xl border transition-transform duration-300 hover:scale-[1.02] shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
+            className={`p-5 sm:p-6 lg:p-7 rounded-2xl border transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
               isDark
                 ? "bg-[#0d0d0d] border-red-500/20"
                 : "bg-gray-100 border-gray-300"
             }`}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div
-                className={`rounded-xl p-4 ${
-                  isDark ? "bg-[#191919]" : "bg-gray-200"
-                }`}
-              >
-                <GraduationCap className="text-red-600 w-8 h-8" />
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-xl sm:text-2xl font-bold">
-                  Bachelor of Science in Artificial Intelligence
-                </h3>
-                <div className="text-red-600 font-semibold">
-                  COMSATS University, Islamabad (Attock Campus)
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5 sm:mb-6">
+              <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                <div
+                  className={`rounded-xl p-3 sm:p-4 shrink-0 ${
+                    isDark ? "bg-[#191919]" : "bg-gray-200"
+                  }`}
+                >
+                  <GraduationCap className="text-red-600 w-6 h-6 sm:w-8 sm:h-8" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold leading-snug">
+                    Bachelor of Science in Artificial Intelligence
+                  </h3>
+                  <div className="text-red-600 font-semibold text-sm sm:text-base mt-1">
+                    COMSATS University, Islamabad (Attock Campus)
+                  </div>
                 </div>
               </div>
-              <div className="ml-auto">
+              <div className="self-start sm:self-auto sm:ml-auto shrink-0">
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-red-100 dark:bg-red-500/10 border-none">
-                  <span className="text-sm font-semibold text-red-600">
+                  <span className="text-xs sm:text-sm font-semibold text-red-600">
                     CGPA:
                   </span>
-                  <span className="ml-1 text-sm font-semibold text-red-600">
+                  <span className="ml-1 text-xs sm:text-sm font-semibold text-red-600">
                     3.6
                   </span>
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-8 mb-4">
-              <div className="flex items-center gap-2 text-sm">
-                <Calendar className="w-4 h-4 text-red-600" />
+            <div className="flex flex-wrap gap-4 sm:gap-8 mb-4 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-red-600 shrink-0" />
                 <span>
                   <span className="font-semibold">Duration:</span> 2021 - 2025
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <MapPin className="w-4 h-4 text-red-600" />
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-red-600 shrink-0" />
                 <span>
-                  <span className="font-semibold">Location:</span> Attock,
-                  Pakistan
+                  <span className="font-semibold">Location:</span> Attock, Pakistan
                 </span>
               </div>
             </div>
 
-            <div className="mb-6 text-sm">
+            <p className="mb-6 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300">
               Specialized in Artificial Intelligence with focus on machine
               learning, deep learning, and AI systems.
-            </div>
+            </p>
 
             <div>
-              <h4 className="font-semibold mb-3">Key Achievements</h4>
-              <div className="space-y-3">
+              <h4 className="font-semibold text-sm sm:text-base mb-3">Key Achievements</h4>
+              <div className="space-y-2.5 sm:space-y-3">
                 {[
                   "Built ML and NLP projects using Python, TensorFlow, and PyTorch",
                   "Worked on academic research focused on Urdu LLMs",
@@ -135,12 +136,12 @@ export default function Experience({ isDark }) {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-3 ${
+                    className={`flex items-start gap-2.5 sm:gap-3 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 ${
                       isDark ? "bg-[#191919]" : "bg-red-100"
                     }`}
                   >
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <span className="text-sm">{item}</span>
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -155,46 +156,50 @@ export default function Experience({ isDark }) {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={cardVariant(0.4)}
-            className={`p-6 rounded-2xl border transition-transform duration-300 hover:scale-[1.02] shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
+            className={`p-5 sm:p-6 lg:p-7 rounded-2xl border transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
               isDark
                 ? "bg-[#0d0d0d] border-red-500/20"
                 : "bg-gray-100 border-gray-300"
             }`}
           >
-            <div className="flex items-start gap-4 mb-6">
-              <div
-                className={`rounded-xl p-3 ${
-                  isDark ? "bg-[#191919]" : "bg-gray-200"
-                }`}
-              >
-                <Briefcase className="text-red-600 w-8 h-8" />
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-xl font-bold mb-1">AI Intern</h3>
-                <div className="text-red-600 font-semibold flex items-center gap-1">
-                  <Building2 className="w-4 h-4" />
-                  <span>Kindi AI</span>
+            <div className="flex items-start justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
+              <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                <div
+                  className={`rounded-xl p-2.5 sm:p-3 shrink-0 ${
+                    isDark ? "bg-[#191919]" : "bg-gray-200"
+                  }`}
+                >
+                  <Briefcase className="text-red-600 w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <div className="text-sm mt-1">Oct 2024 – Jan 2025 (Remote)</div>
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl font-bold mb-1">AI Intern</h3>
+                  <div className="text-red-600 font-semibold flex items-center gap-1 text-sm sm:text-base">
+                    <Building2 className="w-4 h-4 shrink-0" />
+                    <span>Kindi AI</span>
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    Oct 2024 – Jan 2025 (Remote)
+                  </div>
+                </div>
               </div>
               <a
                 href={internshipCertificate}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors"
+                className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors shrink-0 text-xs sm:text-sm font-medium mt-1"
               >
-                <FileText className="w-4 h-4" />
-                <span className="text-sm">Certificate</span>
+                <FileText className="w-4 h-4 shrink-0" />
+                <span>Certificate</span>
               </a>
             </div>
 
-            <p className="text-sm mt-8 mb-10">
+            <p className="text-xs sm:text-sm leading-relaxed mt-4 mb-6 sm:mb-8 text-gray-700 dark:text-gray-300">
               Developed state-of-the-art speech generation systems at Kindi AI,
               using models like Whisper and StyleTTS2 to refine speaker
               consistency and prosody.
             </p>
 
-            <div className="space-y-2 mb-12 ml-8 justify-center">
+            <div className="space-y-2 mb-6 sm:mb-8 pl-1 sm:pl-2">
               {[
                 "Built speech-to-speech systems using VoiceCraft and Google TTS.",
                 "Fine-tuned deep learning models for more expressive audio.",
@@ -202,14 +207,14 @@ export default function Experience({ isDark }) {
                 "Designed and tested large-scale inference scripts.",
                 "Documented results and participated in technical reviews.",
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-1 text-red-600" />
-                  <span className="text-sm">{item}</span>
+                <div key={index} className="flex items-start gap-2.5">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                  <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 flex ml-5 flex-wrap gap-2">
+            <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5 sm:gap-2">
               {[
                 "Whisper",
                 "VoiceCraft",
@@ -223,7 +228,7 @@ export default function Experience({ isDark }) {
               ].map((skill, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-sm text-red-600 bg-red-100 dark:bg-red-500/10 rounded-full"
+                  className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm text-red-600 bg-red-100 dark:bg-red-500/10 rounded-full font-medium"
                 >
                   {skill}
                 </span>
@@ -236,50 +241,52 @@ export default function Experience({ isDark }) {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={cardVariant(0.6)}
-            className={`p-6 rounded-2xl border transition-transform duration-300 hover:scale-[1.02] shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
+            className={`p-5 sm:p-6 lg:p-7 rounded-2xl border transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
               isDark
                 ? "bg-[#0d0d0d] border-red-500/20"
                 : "bg-gray-100 border-gray-300"
             }`}
           >
-            <div className="flex items-start gap-4 mb-6">
-              <div
-                className={`rounded-xl p-3 ${
-                  isDark ? "bg-[#191919]" : "bg-gray-200"
-                }`}
-              >
-                <Briefcase className="text-red-600 w-8 h-8" />
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-xl font-bold mb-1">
-                  Frontend Developer Intern
-                </h3>
-                <div className="text-red-600 font-semibold flex items-center gap-1">
-                  <Building2 className="w-4 h-4" />
-                  <span>Elevvo Pathways</span>
+            <div className="flex items-start justify-between gap-3 sm:gap-4 mb-5 sm:mb-6">
+              <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                <div
+                  className={`rounded-xl p-2.5 sm:p-3 shrink-0 ${
+                    isDark ? "bg-[#191919]" : "bg-gray-200"
+                  }`}
+                >
+                  <Briefcase className="text-red-600 w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <div className="text-sm mt-1">
-                  Jul 2025 – Aug 2025 (Remote)
+                <div className="min-w-0">
+                  <h3 className="text-lg sm:text-xl font-bold mb-1">
+                    Frontend Developer Intern
+                  </h3>
+                  <div className="text-red-600 font-semibold flex items-center gap-1 text-sm sm:text-base">
+                    <Building2 className="w-4 h-4 shrink-0" />
+                    <span>Elevvo Pathways</span>
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    Jul 2025 – Aug 2025 (Remote)
+                  </div>
                 </div>
               </div>
               <a
                 href={frontendCertificate}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors"
+                className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors shrink-0 text-xs sm:text-sm font-medium mt-1"
               >
-                <FileText className="w-4 h-4" />
-                <span className="text-sm">Certificate</span>
+                <FileText className="w-4 h-4 shrink-0" />
+                <span>Certificate</span>
               </a>
             </div>
 
-            <p className="text-sm mt-8 mb-10">
+            <p className="text-xs sm:text-sm leading-relaxed mt-4 mb-6 sm:mb-8 text-gray-700 dark:text-gray-300">
               Working as a frontend intern at Elevvo Pathways to build a fully
               responsive and functional website using modern web development tools
               and frameworks.
             </p>
 
-            <div className="space-y-2 mb-12 ml-8 justify-center">
+            <div className="space-y-2 mb-6 sm:mb-8 pl-1 sm:pl-2">
               {[
                 "Created structured multi-page website layouts with semantic HTML and CSS.",
                 "Implemented interactivity using JavaScript for dynamic components.",
@@ -287,14 +294,14 @@ export default function Experience({ isDark }) {
                 "Built reusable UI components with React.js.",
                 "Tested and optimized cross-browser compatibility and performance.",
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-1 text-red-600" />
-                  <span className="text-sm">{item}</span>
+                <div key={index} className="flex items-start gap-2.5">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                  <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 flex ml-5 flex-wrap gap-2">
+            <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5 sm:gap-2">
               {[
                 "HTML",
                 "CSS",
@@ -308,7 +315,7 @@ export default function Experience({ isDark }) {
               ].map((skill, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-sm text-red-600 bg-red-100 dark:bg-red-500/10 rounded-full"
+                  className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm text-red-600 bg-red-100 dark:bg-red-500/10 rounded-full font-medium"
                 >
                   {skill}
                 </span>
