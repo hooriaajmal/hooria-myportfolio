@@ -10,6 +10,7 @@ import {
   FileText,
 } from "lucide-react";
 import internshipCertificate from "../assets/Internship Certificate.pdf";
+import frontendCertificate from "../assets/FrontendCertificate.pdf";
 
 const headingVariants = {
   hidden: { opacity: 0, y: -30 },
@@ -261,10 +262,15 @@ export default function Experience({ isDark }) {
                   Jul 2025 – Aug 2025 (Remote)
                 </div>
               </div>
-              <span className="flex items-center gap-1 text-gray-500">
+              <a
+                href={frontendCertificate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors"
+              >
                 <FileText className="w-4 h-4" />
                 <span className="text-sm">Certificate</span>
-              </span>
+              </a>
             </div>
 
             <p className="text-sm mt-8 mb-10">
