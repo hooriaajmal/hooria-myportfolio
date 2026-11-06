@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website built with React, showcasing my projects, skills, and experience in AI/ML and web development.
 
+🚀 **Live Demo**: [https://hooria-myportfolio.vercel.app/](https://hooria-myportfolio.vercel.app/)
+
 ## 🚀 Features
 
 - **Modern Design**: Clean and professional UI with smooth animations
@@ -58,7 +60,7 @@ A modern, responsive portfolio website built with React, showcasing my projects,
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/hooriaajmal/portfolio.git
+   git clone https://github.com/hooriaajmal/hooria-myportfolio.git
    cd portfolio
    ```
 
@@ -152,7 +154,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Hooria Ajmal**
 - GitHub: [@hooriaajmal](https://github.com/hooriaajmal)
-- Portfolio: [Live Demo](https://your-portfolio-url.vercel.app)
+- Portfolio: [Live Demo](https://hooria-myportfolio.vercel.app/)
 
 ## 🤝 Contributing
 

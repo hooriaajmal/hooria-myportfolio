@@ -120,7 +120,7 @@ export default function Projects({ isDark }) {
         "Personal portfolio site to showcase projects and skills, built using React, Tailwind CSS, and Framer Motion. Fully responsive with theme switching and animations.",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Formspree"],
       image: portfolioImage,
-      link: "https://github.com/hooriaajmal",
+      link: "https://github.com/hooriaajmal/hooria-myportfolio",
     },
   ];
 
