@@ -83,7 +83,7 @@ export default function Projects({ isDark }) {
         "Scheduling Algorithm",
       ],
       image: timetableImage,
-      link: "https://github.com/hooriaajmal/timetable-generation-agent",
+      link: "https://github.com/hooriaajmal/timetable-system",
     },
     {
       title: "Urdu Sentiment Analysis on Twitter Data",
