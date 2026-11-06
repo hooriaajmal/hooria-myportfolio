@@ -105,7 +105,7 @@ export default function Experience({ isDark }) {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 sm:gap-8 mb-4 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+            <div className="flex flex-wrap gap-4 sm:gap-8 mb-4 text-xs sm:text-sm text-black dark:text-gray-300">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-red-600 shrink-0" />
                 <span>
@@ -120,7 +120,7 @@ export default function Experience({ isDark }) {
               </div>
             </div>
 
-            <p className="mb-6 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            <p className="mb-6 text-xs sm:text-sm leading-relaxed text-black dark:text-gray-300">
               Specialized in Artificial Intelligence with focus on machine
               learning, deep learning, and AI systems.
             </p>
@@ -141,7 +141,7 @@ export default function Experience({ isDark }) {
                     }`}
                   >
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
+                    <span className="text-xs sm:text-sm leading-relaxed text-black dark:text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -177,7 +177,7 @@ export default function Experience({ isDark }) {
                     <Building2 className="w-4 h-4 shrink-0" />
                     <span>Kindi AI</span>
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-400 mt-1">
                     Oct 2024 – Jan 2025 (Remote)
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function Experience({ isDark }) {
               </a>
             </div>
 
-            <p className="text-xs sm:text-sm leading-relaxed mt-4 mb-6 sm:mb-8 text-gray-700 dark:text-gray-300">
+            <p className="text-xs sm:text-sm leading-relaxed mt-4 mb-6 sm:mb-8 text-black dark:text-gray-300">
               Developed state-of-the-art speech generation systems at Kindi AI,
               using models like Whisper and StyleTTS2 to refine speaker
               consistency and prosody.
@@ -209,7 +209,7 @@ export default function Experience({ isDark }) {
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                  <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
+                  <span className="text-xs sm:text-sm leading-relaxed text-black dark:text-gray-300">{item}</span>
                 </div>
               ))}
             </div>
@@ -264,7 +264,7 @@ export default function Experience({ isDark }) {
                     <Building2 className="w-4 h-4 shrink-0" />
                     <span>Elevvo Pathways</span>
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-400 mt-1">
                     Jul 2025 – Aug 2025 (Remote)
                   </div>
                 </div>
@@ -280,7 +280,7 @@ export default function Experience({ isDark }) {
               </a>
             </div>
 
-            <p className="text-xs sm:text-sm leading-relaxed mt-4 mb-6 sm:mb-8 text-gray-700 dark:text-gray-300">
+            <p className="text-xs sm:text-sm leading-relaxed mt-4 mb-6 sm:mb-8 text-black dark:text-gray-300">
               Working as a frontend intern at Elevvo Pathways to build a fully
               responsive and functional website using modern web development tools
               and frameworks.
@@ -296,7 +296,7 @@ export default function Experience({ isDark }) {
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                  <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
+                  <span className="text-xs sm:text-sm leading-relaxed text-black dark:text-gray-300">{item}</span>
                 </div>
               ))}
             </div>
