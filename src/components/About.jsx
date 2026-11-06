@@ -1,72 +1,55 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Rocket } from "lucide-react";
 import { Code } from "lucide-react";
 
-const headingVariants = {
-  hidden: { opacity: 0, y: -30 }, // top to down
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 }, // bottom to top
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 export default function About({ isDark }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, amount: 0.3 });
+  const inView = useInView(ref, { once: false, amount: 0.2 });
 
   return (
     <section
       id="about"
       ref={ref}
-      className={`min-h-screen py-16 px-4 sm:px-8 lg:px-16 ${
-        isDark ? "bg-black text-white" : "bg-white text-black"
+      className={`${isDark ? "bg-black text-white" : "bg-white text-black"}`}
+    >
+{/* Top Statement */}
+<motion.div
+  initial="hidden"
+  animate={inView ? "visible" : "hidden"}
+  variants={fadeUp}
+  className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 py-24 text-left"
+>
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-snug max-w-6xl">
+    I like to learn by doing things, and I'm curious about how things work. I like to build real projects and figure out how to make them work my way.
+  </h1>
+
+  {/* Label with line */}
+  <div className="mt-10">
+    <p
+      className={`text-sm mb-2 ${
+        isDark ? "text-gray-400" : "text-gray-600"
       }`}
     >
-      {/* Heading - Hero style */}
+      My journey so far
+    </p>
+    <hr className={`${isDark ? "border-gray-700" : "border-gray-300"}`} />
+  </div>
+</motion.div>
+
+
+
+      {/* Two-Column Section */}
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        variants={headingVariants}
-        className="text-center mt-12 mb-12"
+        variants={fadeUp}
+        className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 pb-24"
       >
-        <div className="inline-block relative">
-          <h2 className="text-3xl sm:text-4xl font-bold inline-block">
-            <span className={`${isDark ? "text-white" : "text-black"}`}>
-              About{" "}
-            </span>
-            <span className="text-red-600">Me</span>
-          </h2>
-          <span className="absolute left-0 bottom-[-10px] h-[6px] w-10 bg-red-600 rounded-full" />
-        </div>
-      </motion.div>
-
-      {/* Card */}
-      <motion.div
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={cardVariants}
-        className={`max-w-6xl mx-auto mt-12 p-6 sm:p-10 rounded-xl border transition-transform duration-300 hover:scale-105 shadow-[0_0_5px_rgba(255,0,0,0.5)] ${
-          isDark
-            ? "bg-[#0d0d0d] border-red-500/20"
-            : "bg-gray-100 border-gray-300"
-        }`}
-      >
-        <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2">
-          <Rocket className="text-red-600" />
-          My AI Journey
-        </h3>
-
         <div className="grid sm:grid-cols-2 gap-8">
           {/* Left column */}
           <div className="space-y-6">

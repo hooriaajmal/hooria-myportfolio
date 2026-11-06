@@ -9,6 +9,7 @@ import {
   Building2,
   FileText,
 } from "lucide-react";
+import internshipCertificate from "../assets/Internship Certificate.pdf";
 
 const headingVariants = {
   hidden: { opacity: 0, y: -30 },
@@ -176,7 +177,7 @@ export default function Experience({ isDark }) {
                 <div className="text-sm mt-1">Oct 2024 – Jan 2025 (Remote)</div>
               </div>
               <a
-                href="src/assets/Internship Certificate.pdf"
+                href={internshipCertificate}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors"
@@ -260,15 +261,10 @@ export default function Experience({ isDark }) {
                   Jul 2025 – Aug 2025 (Remote)
                 </div>
               </div>
-              <a
-                href="src/assets/FrontendCertificate.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-red-600 hover:text-red-500 transition-colors"
-              >
+              <span className="flex items-center gap-1 text-gray-500">
                 <FileText className="w-4 h-4" />
                 <span className="text-sm">Certificate</span>
-              </a>
+              </span>
             </div>
 
             <p className="text-sm mt-8 mb-10">

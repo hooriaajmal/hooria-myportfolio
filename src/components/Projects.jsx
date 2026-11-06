@@ -2,6 +2,13 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 
+import copyStyleImage from "../assets/copystyle.png";
+import priceImage from "../assets/price.png";
+import timetableImage from "../assets/timetable.png";
+import sentimentImage from "../assets/image.png";
+import ashImage from "../assets/ash.png";
+import portfolioImage from "../assets/portfolio.png";
+
 const headingVariants = {
   hidden: { opacity: 0, y: -30 },
   visible: {
@@ -11,7 +18,6 @@ const headingVariants = {
   },
 };
 
-// CHANGED: Slide from top instead of bottom
 const fadeInVariant = (delay = 0) => ({
   hidden: { opacity: 0, y: -30 },
   visible: {
@@ -40,16 +46,16 @@ export default function Projects({ isDark }) {
       description:
         "Fine-tuned TensorFlow models on Google Colab for copy style transfer and generation. Built a Streamlit app for real-time inference on CPU with advanced preprocessing, custom loss functions, and optimized model architecture for style-aware text generation.",
       technologies: [
-        "Python", 
-        "TensorFlow", 
-        "Google Colab", 
-        "Streamlit", 
-        "NLP", 
+        "Python",
+        "TensorFlow",
+        "Google Colab",
+        "Streamlit",
+        "NLP",
         "Fine-tuning",
         "CPU Optimization",
-        "Text Generation"
+        "Text Generation",
       ],
-      image: "src/assets/copystyle.png",
+      image: copyStyleImage,
       link: "https://github.com/hooriaajmal/copy-style-transfer",
     },
     {
@@ -57,16 +63,16 @@ export default function Projects({ isDark }) {
       description:
         "Developed a hybrid time series analysis model using PyTorch for real-time price prediction with 2-second intervals for 20-second forecasts. Integrated online scraping APIs for live data, implemented advanced preprocessing, and deployed optimized CPU inference with Streamlit UI.",
       technologies: [
-        "Python", 
-        "PyTorch", 
-        "Time Series Analysis", 
-        "Web Scraping", 
+        "Python",
+        "PyTorch",
+        "Time Series Analysis",
+        "Web Scraping",
         "Streamlit",
         "Hybrid Models",
         "Real-time Prediction",
-        "API Integration"
+        "API Integration",
       ],
-      image: "src/assets/price.png",
+      image: priceImage,
       link: "https://github.com/hooriaajmal/price-prediction-system",
     },
     {
@@ -74,18 +80,18 @@ export default function Projects({ isDark }) {
       description:
         "Developed an intelligent timetable generation agent using Grok model and LLaMA for automated scheduling. Processes CSV data with JSON output structure, intelligently assigns rooms and time slots, and creates optimized timetables with conflict resolution and resource management.",
       technologies: [
-        "Python", 
-        "LLM", 
-        "Grok", 
-        "LLaMA", 
-        "Groq", 
-        "Pandas", 
+        "Python",
+        "LLM",
+        "Grok",
+        "LLaMA",
+        "Groq",
+        "Pandas",
         "JSON Processing",
         "CSV Data",
         "Agent Systems",
-        "Scheduling Algorithm"
+        "Scheduling Algorithm",
       ],
-      image: "src/assets/timetable.png",
+      image: timetableImage,
       link: "https://github.com/hooriaajmal/timetable-generation-agent",
     },
     {
@@ -93,7 +99,7 @@ export default function Projects({ isDark }) {
       description:
         "Built and fine-tuned BiLSTM, CNN, and BERT models to classify Urdu tweets with custom preprocessing and class weighting for multi-class and binary classification.",
       technologies: ["Python", "TensorFlow", "Hugging Face", "Colab"],
-      image: "src/assets/image.png",
+      image: sentimentImage,
       link: "https://colab.research.google.com/drive/1YgmmdFX0KAavu3TBJsWvQWveDmesc1ZB?usp=sharing",
     },
     {
@@ -114,7 +120,7 @@ export default function Projects({ isDark }) {
         "Stable Diffusion",
         "MusicGen",
       ],
-      image: "src/assets/ash.png",
+      image: ashImage,
       link: "https://github.com/hooriaajmal/ASH-Urdu-Story-Generation",
     },
     {
@@ -122,7 +128,7 @@ export default function Projects({ isDark }) {
       description:
         "Personal portfolio site to showcase projects and skills, built using React, Tailwind CSS, and Framer Motion. Fully responsive with theme switching and animations.",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Formspree"],
-      image: "src/assets/portfolio.png",
+      image: portfolioImage,
       link: "https://github.com/hooriaajmal",
     },
   ];
@@ -136,7 +142,7 @@ export default function Projects({ isDark }) {
       }`}
     >
       {/* Heading */}
-     <motion.div
+      <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={headingVariants}
@@ -175,6 +181,7 @@ export default function Projects({ isDark }) {
                 alt={project.title}
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
               />
+
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <motion.a
                   href={project.link}
@@ -198,6 +205,7 @@ export default function Projects({ isDark }) {
               >
                 {project.title}
               </h3>
+
               <p
                 className={`mb-4 text-sm leading-relaxed ${
                   isDark ? "text-gray-300" : "text-gray-800"
@@ -205,6 +213,7 @@ export default function Projects({ isDark }) {
               >
                 {project.description}
               </p>
+
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, i) => (
                   <span
